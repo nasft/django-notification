@@ -206,3 +206,7 @@ def queue(users, label, extra_context=None, sender=None):
     for user in users:
         notices.append((user, label, extra_context, sender))
     NoticeQueueBatch(pickled_data=pickle.dumps(notices).encode("base64")).save()
+
+
+def create_notice_type(*args, **kwargs):
+    NoticeType.create(*args, **kwargs)

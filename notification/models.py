@@ -209,4 +209,10 @@ def queue(users, label, extra_context=None, sender=None):
 
 
 def create_notice_type(*args, **kwargs):
+    """
+    Creates a NoticeType with the given arguments.
+
+    N.B. - This function is provided to allow for backwards compatibility with
+    packages that rely on the old pinax notifications.
+    """
     NoticeType.create(*args, **kwargs)
